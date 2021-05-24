@@ -14,7 +14,7 @@
 
 5 ) Then we are going to install micro services helm charts for the initial kickoff of the environments
 
-6) create the production central ingress that is taking by the application load balancer controller and will create all the asset target groups load balancer itself also allowed the external DNS application to create the records on our hosted zone.
+6 ) create the production central ingress that is taking by the application load balancer controller and will create all the asset target groups load balancer itself also allowed the external DNS application to create the records on our hosted zone.
 
 
 _______________________
@@ -28,7 +28,7 @@ _______________________
 
 __________________________
 
-Step 1 
+### Step 1 
 
 ![image](https://user-images.githubusercontent.com/33585301/119318837-637aae00-bc97-11eb-8d88-c501f841ce75.png)
 
@@ -38,20 +38,20 @@ ____________________
 
 
 
-Step 2
+### Step 2
 
 ![image](https://user-images.githubusercontent.com/33585301/119318929-7d1bf580-bc97-11eb-9c06-e9a3e49e246f.png)
 
 We are going to create prod namespace 
 
 
-Step 3 
+### Step 3 
 
 ![image](https://user-images.githubusercontent.com/33585301/119319114-accafd80-bc97-11eb-8959-b77b90e3b51d.png)
 
 we are going to execute the cloudformation that is going to create each of the dynamodb tables of each of api s  
 
-Step 4 
+### Step 4 
 
 ![image](https://user-images.githubusercontent.com/33585301/119319239-cd935300-bc97-11eb-94b5-e0dd2054e7ef.png)
 
