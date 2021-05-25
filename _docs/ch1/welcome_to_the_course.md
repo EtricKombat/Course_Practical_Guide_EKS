@@ -20,3 +20,19 @@ We will start for the scratch from an already developed project and easy to unde
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119449671-8b7a1800-bd50-11eb-8ce8-061fce882838.png)
+
+
+
+______________________
+
+
+EKS stands for Elastic Kubernetes services , it is one of the  container platform on AWS like ECS or ECR  . 
+
+1) It is basically the control plain of the k8 cluster  we managed by AWS.
+
+2) By default it is also highly available and performance oriented because it starts an minimum of 2 API servers and 3 etcd nodes in different availablityh zone avoiding a  single point of failure 
+
+3) it also scales to reach performance requirments in term of serving the workers nodes 
+4) EKS also has service level agreement or SLA which defines they try to be 99.95% uptime , they have a service credit policy 
+5) Easy to integrate with other aws services 
+6) It is simple to perform upgrades  
