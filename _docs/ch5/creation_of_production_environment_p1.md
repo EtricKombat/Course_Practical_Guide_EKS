@@ -1,6 +1,6 @@
 
 
-[Previous Page]()---------------------------------------------------- [Next Page]()
+[Previous Page](https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/_docs/ch5/automatic_build_&_deployment.md)---------------------------------------------------- [Next Page](https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/_docs/ch5/creation_of_production_environment_p2.md)
 
 
 
