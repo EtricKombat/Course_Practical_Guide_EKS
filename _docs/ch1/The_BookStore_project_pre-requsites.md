@@ -55,25 +55,32 @@ __________________________
 on top of public subnet we will create nat gatways  so that the resources from the public subnet can access interneet , 
 this is for download for software required , updates,security patches  and so on . Also this can be used to acess resource such as s3 , dynamodb .
 Although most secure and effective  way to access this resource is via VPC endpoint will keep this simple to maintain the  cost of the solution low as possible
-After the creation of NAT gateway we will have to address the route table so that private subnet whenever they want to got to the internet simple point the traffic to NAT gateway , ofcouse all of the worker nodes are going to be managed by control plane provided by EKS 
+After the creation of NAT gateway we will have to address the route table so that private subnet whenever they want to got to the internet simple point the traffic to NAT gateway , 
 __________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119455468-41486500-bd57-11eb-8a62-ac43b12f06d9.png)
 
+ofcouse all of the worker nodes are going to be managed by control plane provided by EKS 
 __________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119455532-4f968100-bd57-11eb-9265-87c8b3d0c5c2.png)
 
+When we start deploying  our applications some of them are going to have private application load balancer so that we can access from the network such as development environment which we dont want to internet accessible 
 __________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119455573-59b87f80-bd57-11eb-9909-4a942e2b4203.png)
+
+And the front end will be expose through the public load balancer 
 __________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119455854-a8feb000-bd57-11eb-8251-28a2c304425b.png)
 
+so that it can be reached from internet , which is the intented 
 __________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119455822-9c7a5780-bd57-11eb-82fb-f208607e3960.png)
+
+DynamoDB tables will be created as well . these are not really tied to a VPC ( It was put this in here to represent the worker nodes will access them 
 
 __________________________
 
