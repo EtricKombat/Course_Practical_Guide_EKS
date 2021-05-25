@@ -40,3 +40,10 @@ EKS stands for Elastic Kubernetes services , it is one of the  container platfor
 4) EKS also has service level agreement or SLA which defines they try to be 99.95% uptime , they have a service credit policy 
 5) Easy to integrate with other aws services 
 6) It is simple to perform upgrades  
+
+
+__________________
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/119451007-5cfd3c80-bd52-11eb-977f-20094f1deae4.png)
