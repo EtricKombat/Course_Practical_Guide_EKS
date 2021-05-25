@@ -28,6 +28,10 @@ ______________________
 
 EKS stands for Elastic Kubernetes services , it is one of the  container platform on AWS like ECS or ECR  . 
 
+![image](https://user-images.githubusercontent.com/33585301/119450853-26bfbd00-bd52-11eb-88b5-6b6f4fa58253.png)
+
+
+
 1) It is basically the control plain of the k8 cluster  we managed by AWS.
 
 2) By default it is also highly available and performance oriented because it starts an minimum of 2 API servers and 3 etcd nodes in different availablityh zone avoiding a  single point of failure 
