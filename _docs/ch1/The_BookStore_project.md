@@ -36,3 +36,15 @@ ______________________________
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119454266-fda12b80-bd55-11eb-92b4-4fb22e043861.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119454436-2aedd980-bd56-11eb-88b3-7945921477e0.png)
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/119454600-5670c400-bd56-11eb-97c9-84be0274097e.png)
+
+![image](https://user-images.githubusercontent.com/33585301/119454675-6d171b00-bd56-11eb-8fbf-da17ffb80e16.png)
+
+
+
