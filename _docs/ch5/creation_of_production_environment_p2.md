@@ -9,3 +9,9 @@
 # CICD
 
 ## Creation of the Production Environment - Part 2
+
+
+![image](https://user-images.githubusercontent.com/33585301/119443778-cdeb2700-bd47-11eb-8ab8-c82334798655.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119443818-de030680-bd47-11eb-99f7-45d455370914.png)
