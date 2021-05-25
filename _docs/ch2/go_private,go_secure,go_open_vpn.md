@@ -32,6 +32,7 @@
 ![image](https://user-images.githubusercontent.com/33585301/119474005-5a5a1180-bd69-11eb-9151-076a54e929a9.png)
 
 
+
 ![image](https://user-images.githubusercontent.com/33585301/119474046-647c1000-bd69-11eb-91e4-34b844886887.png)
 
 
@@ -53,3 +54,12 @@ https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastruc
 ![image](https://user-images.githubusercontent.com/33585301/119475922-35669e00-bd6b-11eb-8978-35109662f191.png)
 
 
+worker node security group
+
+![image](https://user-images.githubusercontent.com/33585301/119476164-7068d180-bd6b-11eb-9ade-c3121b543034.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119476345-9aba8f00-bd6b-11eb-8e2b-f09be2b13100.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119476389-a27a3380-bd6b-11eb-820f-697ef0299c4b.png)
