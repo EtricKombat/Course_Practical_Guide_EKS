@@ -11,3 +11,30 @@
 # Networking and EKS
 
 ## Go Private , Go Secure , Go OpenVPN
+
+![image](https://user-images.githubusercontent.com/33585301/119473607-f5062080-bd68-11eb-997a-2f52f54293c7.png)
+
+![image](https://user-images.githubusercontent.com/33585301/119473643-fd5e5b80-bd68-11eb-83bc-c3f78df48662.png)
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/119473791-1ff07480-bd69-11eb-8609-1c0a3623362d.png)
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/119473814-27178280-bd69-11eb-8c97-6c5dd846b5ab.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119473839-2c74cd00-bd69-11eb-9f18-55fe32328705.png)
+
+![image](https://user-images.githubusercontent.com/33585301/119473899-40203380-bd69-11eb-9902-07af16f87f0f.png)
+
+![image](https://user-images.githubusercontent.com/33585301/119474005-5a5a1180-bd69-11eb-9151-076a54e929a9.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119474046-647c1000-bd69-11eb-91e4-34b844886887.png)
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/119474122-7493ef80-bd69-11eb-8399-a777538cdf67.png)
+
