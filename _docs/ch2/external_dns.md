@@ -38,3 +38,11 @@ https://github.com/kubernetes-sigs/external-dns
 
 
 https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md
+
+
+
+
+
+https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/k8s-tooling/1-external-dns/01-initial-external-dns.yaml
+
+https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/k8s-tooling/1-external-dns/02-testing-external-dns.yaml
