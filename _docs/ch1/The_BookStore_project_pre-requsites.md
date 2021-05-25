@@ -80,10 +80,17 @@ __________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119455822-9c7a5780-bd57-11eb-82fb-f208607e3960.png)
 
-DynamoDB tables will be created as well . these are not really tied to a VPC ( It was put this in here to represent the worker nodes will access them 
+DynamoDB tables will be created as well . (these are not really tied to a VPC ,It was put this in here to represent the worker nodes will access them )
 
 __________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119455909-b9168f80-bd57-11eb-80fc-09c333880434.png)
+
+In that order the major aid of the pods will be aligned to the specific IAM policies will allow the application to consume the respective dynamodb table ( disscussed more in following chapter ) 
+
+Part of the whole architecture will be created using "eksctl"  and the remaining like dynamodb table and the IAM policies with cloudformation , 
+
+
+
 
 __________________________
