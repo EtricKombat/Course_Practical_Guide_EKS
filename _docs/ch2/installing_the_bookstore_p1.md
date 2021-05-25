@@ -6,5 +6,7 @@
 
 
 # Chapter - 2 
+## Networking and EKS
 
-## 
+## Installing the Bookstore - Part 1
+
