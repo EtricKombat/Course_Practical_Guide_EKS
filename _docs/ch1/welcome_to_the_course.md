@@ -8,3 +8,5 @@
 # Introduction
 
 ## Welcome to the Course
+
+![image](https://user-images.githubusercontent.com/33585301/119449130-dfd0c800-bd4f-11eb-9f03-53a12c91bea4.png)
