@@ -5,7 +5,8 @@
 
 
 # Chapter - 2 
+# Networking and EKS
 
-## 
+## CNI and EKS - Integration with VPC
 
 
