@@ -8,7 +8,7 @@
 # Chapter - 2 
 # Networking and EKS
 
-## External DNS
+## 10. External DNS
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119494640-27bb1380-bd7f-11eb-8d3a-916e274b22e3.png)
