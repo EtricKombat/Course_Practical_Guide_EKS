@@ -7,7 +7,7 @@
 # Chapter - 2 
 # Networking and EKS
 
-## CNI and EKS - Integration with VPC
+## 13 . CNI and EKS - Integration with VPC
 
 ![image](https://user-images.githubusercontent.com/33585301/119602045-f89cb480-be07-11eb-8243-9dbd77d9b7a9.png)
 
