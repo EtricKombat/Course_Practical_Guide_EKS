@@ -11,3 +11,17 @@
 
 ![image](https://user-images.githubusercontent.com/33585301/119602045-f89cb480-be07-11eb-8243-9dbd77d9b7a9.png)
 
+How to customize n/wing around EKS with the help of CNI plugin
+
+
+
+
+
+
+
+CNI stands for container network interface , which is instructions or guidelines that a container environment needs to have related to the administration of the n/wing .
+Maintaining containers in terms of n/w itss one of most important part on its success . so CNI is an standard that defines how a container engines manage there connections.
+
+CNI can be implemented in the form of plugins and the standard can be extended according to the needs the environment and the runtime were this is installed .
+
+The most famous common container orchestration services like Openshift,ECS ..... implement CNI in there own way
