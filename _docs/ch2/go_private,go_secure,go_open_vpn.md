@@ -10,7 +10,7 @@
 # Chapter - 2 
 # Networking and EKS
 
-## Go Private , Go Secure , Go OpenVPN
+## 7. Go Private , Go Secure , Go OpenVPN
 
 ![image](https://user-images.githubusercontent.com/33585301/119473607-f5062080-bd68-11eb-997a-2f52f54293c7.png)
 
