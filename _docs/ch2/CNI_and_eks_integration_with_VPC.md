@@ -52,6 +52,31 @@ Since this is already installed we are now getting benefits from it , and we saw
 
 But given this CNI knowledge we can now expand & customize our n/w 
 
+---
+
+![image](https://user-images.githubusercontent.com/33585301/119604985-9fd01a80-be0d-11eb-84ec-79fdd1dc60ad.png)
 
 
-Lets 
+Lets start from VPC that we have created , in here we have multiple subnet 
+
+![image](https://user-images.githubusercontent.com/33585301/119605050-c1c99d00-be0d-11eb-80d9-da1a1c93862d.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119605106-d7d75d80-be0d-11eb-9929-14230cad02e5.png)
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/119605137-e291f280-be0d-11eb-8fa3-9bf3d2be8faf.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119605170-efaee180-be0d-11eb-9067-3dd98507b5b9.png)
+
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/119605199-fb020d00-be0d-11eb-8cb7-bd256c1151ca.png)
+
+
+
+
+
