@@ -72,11 +72,35 @@ Lets start from VPC that we have created , in here we have multiple subnet
 ![image](https://user-images.githubusercontent.com/33585301/119605170-efaee180-be0d-11eb-9067-3dd98507b5b9.png)
 
 
+![image](https://user-images.githubusercontent.com/33585301/119605266-166d1800-be0e-11eb-9f19-34345e4edb0b.png)
+
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119605199-fb020d00-be0d-11eb-8cb7-bd256c1151ca.png)
 
 
 
+![image](https://user-images.githubusercontent.com/33585301/119605342-3e5c7b80-be0e-11eb-980c-688594d16aac.png)
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/119605368-4fa58800-be0e-11eb-84a7-809c0dc344f3.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119605405-60ee9480-be0e-11eb-9dd6-d94456965e53.png)
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/119605513-8e3b4280-be0e-11eb-98e8-c34e29ce482c.png)
+
+![image](https://user-images.githubusercontent.com/33585301/119605438-6f3cb080-be0e-11eb-93b2-24d9a59d9e5f.png)
+
+
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/119605467-795eaf00-be0e-11eb-949b-969ff48f5975.png)
 
 
