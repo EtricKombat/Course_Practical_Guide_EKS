@@ -7,7 +7,7 @@
 # Chapter - 2 
 # Networking and EKS
 
-## Networking & EKS
+## 6. Networking & EKS
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119473206-93de4d00-bd68-11eb-898c-b0181899e3db.png)
