@@ -8,7 +8,7 @@
 # Chapter - 2 
 # Networking and EKS
 
-## installing the Bookstore - Part 2
+## 12 .Installing the Bookstore - Part 2
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119611334-2c7fd600-be18-11eb-9932-283b93fc0977.png)
