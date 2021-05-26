@@ -13,6 +13,7 @@
 
 How to customize n/wing around EKS with the help of CNI plugin
 
+___
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119602981-f3406980-be09-11eb-82ba-acfccc626aa0.png)
@@ -25,4 +26,8 @@ Maintaining containers in terms of n/w itss one of most important part on its su
 
 2) CNI can be implemented in the form of plugins and the standard can be extended according to the needs the environment and the runtime were this is installed .
 
-3) The most famous common container orchestration services like Openshift,ECS ..... implement CNI in there own way
+3) The most famous  container orchestration tooling like Openshift,ECS,rks,k8.....etc  implement CNI in there own way but still being CNI . which means that all of them follows the same strategy the general way and prevent redoing work 
+
+
+___
+
