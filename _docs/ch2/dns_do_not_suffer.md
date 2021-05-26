@@ -9,7 +9,7 @@
 # Chapter - 2 
 # Networking and EKS
 
-## DNS - Do Not Suffer
+## 8. DNS - Do Not Suffer
 
 ![image](https://user-images.githubusercontent.com/33585301/119482008-ff2c1d00-bd70-11eb-8624-0736016aba13.png)
 
