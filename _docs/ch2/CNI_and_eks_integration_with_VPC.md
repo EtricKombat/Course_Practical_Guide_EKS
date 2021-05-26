@@ -46,3 +46,12 @@ EKS is k8s , in the k8s world multiple implementation are plugins of CNI are out
 3) The CNI plugin doesnt need to installed into the EKS cluster only upgrade it if new versions come up . This is the out of the feature that can be used right away .
 
 
+---
+
+Since this is already installed we are now getting benefits from it , and we saw how smooth the n/wing went with the k8S  cluster and other aws services like loadbalancer
+
+But given this CNI knowledge we can now expand & customize our n/w 
+
+
+
+Lets 
