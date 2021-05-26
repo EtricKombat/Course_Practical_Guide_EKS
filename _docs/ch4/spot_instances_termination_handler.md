@@ -6,4 +6,4 @@
 # Chapter - 4 
 #  more power for less money
 
-##
+## 21.  Spot instances - termination handler
