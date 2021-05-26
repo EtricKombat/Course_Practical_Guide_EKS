@@ -58,3 +58,21 @@ Helm for installaing micro services  (front end )
 ![image](https://user-images.githubusercontent.com/33585301/119612540-a49acb80-be19-11eb-84aa-dc3be6efc45e.png)
 
 
+![image](https://user-images.githubusercontent.com/33585301/119612852-052a0880-be1a-11eb-8c92-12f3444465e7.png)
+
+
+
+________________
+
+
+![image](https://user-images.githubusercontent.com/33585301/119612933-1ecb5000-be1a-11eb-9266-015ebbce80d8.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119612966-28ed4e80-be1a-11eb-9889-b4ec971be45c.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119613051-3d314b80-be1a-11eb-9b15-e2a021faa87f.png)
+
+
+
+
