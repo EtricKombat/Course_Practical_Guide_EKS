@@ -19,9 +19,42 @@
 
 ___________
 
-Helm for installaing micro services 
+Helm for installaing micro services  (resource api , client, inventory )
 
 ![image](https://user-images.githubusercontent.com/33585301/119611531-71a40800-be18-11eb-9aef-249b9ea025b5.png)
 
 ![image](https://user-images.githubusercontent.com/33585301/119611629-94362100-be18-11eb-84de-73dab6314ac0.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119611905-e70fd880-be18-11eb-9460-70fcee2daeb3.png)
+
+![image](https://user-images.githubusercontent.com/33585301/119611950-f2630400-be18-11eb-9acc-7ad4e0e7d40a.png)
+
+![image](https://user-images.githubusercontent.com/33585301/119611980-f98a1200-be18-11eb-90cf-5f03490b0182.png)
+
+
+_____________
+
+Helm for installaing micro services  (front end )
+
+![image](https://user-images.githubusercontent.com/33585301/119612277-5259aa80-be19-11eb-953d-e07050a4efbd.png)
+
+![image](https://user-images.githubusercontent.com/33585301/119612296-584f8b80-be19-11eb-8854-11b2414a5859.png)
+
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/119612083-1cb4c180-be19-11eb-9f92-3192e9cdec55.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119612328-61d8f380-be19-11eb-933a-c9f4df9da0d4.png)
+
+![image](https://user-images.githubusercontent.com/33585301/119612370-70270f80-be19-11eb-958f-ab86f9923282.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119612514-9a78cd00-be19-11eb-99f8-b103d4990593.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/119612540-a49acb80-be19-11eb-84aa-dc3be6efc45e.png)
+
 
