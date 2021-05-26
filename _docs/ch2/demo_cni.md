@@ -8,7 +8,7 @@
 # Chapter - 2 
 # Networking and EKS
 
-## Demo : CNI
+## 14 . Demo : CNI
 
 ![image](https://user-images.githubusercontent.com/33585301/119605817-0c97e480-be0f-11eb-933d-1b9c2f74f089.png)
 
