@@ -33,3 +33,12 @@ ___
 
 ![image](https://user-images.githubusercontent.com/33585301/119603299-88436280-be0a-11eb-88c7-e3bcf32c8f92.png)
 
+EKS is k8s , in the k8s world multiple implementation are plugins of CNI are out there .  so eks also has its own one that takes more advantage of the AWS eco system , espically from VPC . 
+
+1) This plugin was developed and is maintaned by AWs . But it is opensource . Contributions from community 
+
+2) CNI plugin used in AWS natively uses vpc, allowing the pods to use ip from the network and be at the same level as other aws resources  that can be allocated in vpc . Gain all the security group benefits all the connections established and so on .
+
+3) The CNI plugin doesnt need to installed into the EKS cluster only upgrade it if new versions come up . This is the out of the feature that can be used right away .
+
+
