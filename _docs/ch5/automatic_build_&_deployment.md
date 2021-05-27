@@ -8,7 +8,7 @@
 # Chapter - 5
 # CICD
 
-## Automatic Build and Deployment
+## 30 . Automatic Build and Deployment
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119767036-c5275c00-bed3-11eb-97ac-96f0097b0c29.png)
