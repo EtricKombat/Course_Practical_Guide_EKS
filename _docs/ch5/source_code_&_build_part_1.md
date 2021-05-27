@@ -14,7 +14,10 @@
 ![image](https://user-images.githubusercontent.com/33585301/119656701-9a43f600-be48-11eb-8f72-9ab325990933.png)
 
 
-![image](https://user-images.githubusercontent.com/33585301/119656761-adef5c80-be48-11eb-810a-c3c355c11326.png)
+![image](https://user-images.githubusercontent.com/33585301/119765178-5563a200-bed0-11eb-9dcc-e8c50a362992.png)
+
+
+
 
 
 only step 1 & 2 in this chapter .
