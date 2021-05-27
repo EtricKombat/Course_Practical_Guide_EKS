@@ -31,8 +31,10 @@ _______________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119318482-01ba4400-bc97-11eb-816a-c81a6e1e6f5e.png)
 
-## Lab 2 
+The first Lab will cover 1st four steps 
 
+## Lab 2 
+Step 5 & 6 
 
 __________________________
 
@@ -63,4 +65,27 @@ we are going to execute the cloudformation that is going to create each of the d
 
 ![image](https://user-images.githubusercontent.com/33585301/119319239-cd935300-bc97-11eb-94b5-e0dd2054e7ef.png)
 
-We are going to create IAM roles for service account assets which are all the iam assets and the servce account ready for start recieving our application on k8 
+We are going to create the IAM roles for service account assets which are all the iam assets and the servce account ready for start recieving our application on k8 
+
+
+
+
+
+_____________________
+
+
+Step 1 : 
+
+
+![image](https://user-images.githubusercontent.com/33585301/119772052-39fe9400-bedc-11eb-90f0-247aede0bf78.png)
+
+
+https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/cloudformation/dns/dns.json
+
+
+We use this CF script for development , it ask for 3 parameters (environment,domainname,deployhosed zone ) , if we don't have hosted zone for the dns for the production enviornment recommeded to set this value to 'yes' 
+
+
+
+ACM certificate which is based on the domain name which we have to specify , validation method in our case is 'DNS' so we need to manaully create the record on the hosted  zone 
+
