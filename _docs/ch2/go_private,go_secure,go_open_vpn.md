@@ -112,12 +112,13 @@ ____________________________
 
 
 - security group  allowing multiple TCP portS  443 ,943 ,945
-- security group  allowing  UDP  port 1194 which is actually were the connection happens all of this port are describing open vpn 
+- security group  allowing  UDP  port 1194 which is actually were the connection happens all of this port are describing open vpn documentation
 
 
 
+Ref CF: https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/cloudformation/openvpn/openvpn.yaml
+Ref OpenVPN: https://openvpn.net/vpn-server-resources/getting-started/
 
-https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/cloudformation/openvpn/openvpn.yaml
 
 ## GUI Parameters 
 
