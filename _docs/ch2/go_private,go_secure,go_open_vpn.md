@@ -19,14 +19,17 @@ _____________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119473643-fd5e5b80-bd68-11eb-83bc-c3f78df48662.png)
 
-This software will allow us to use our trrafic internally in our 
+This software will allow us to use our traffic as we are  internally in the  VPC , using the private CIDR we have established for  VPC
 _____________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119473791-1ff07480-bd69-11eb-8609-1c0a3623362d.png)
 
+Lets explain how VPN will help us in our VPC 
 _____________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119473814-27178280-bd69-11eb-8c97-6c5dd846b5ab.png)
+
+If we try to hit one of EC2 we wont be able to , simply because we are not in the same network 
 _____________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119473839-2c74cd00-bd69-11eb-9f18-55fe32328705.png)
