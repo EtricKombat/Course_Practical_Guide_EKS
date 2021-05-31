@@ -181,15 +181,124 @@ Worker node security group - > edit it -> allow all the triaffic of security gru
 ![image](https://user-images.githubusercontent.com/33585301/119476164-7068d180-bd6b-11eb-9ade-c3121b543034.png)
 
 
-____________________________
+
+![image](https://user-images.githubusercontent.com/33585301/120177984-9b996800-c226-11eb-92a7-69be6ba0aeef.png)
+
+Now the worker node can accept traffic from the openvpn server which by proxy we are going to add heating thos inputs 
+
+## Client configuration file from openvpn 
+
+![image](https://user-images.githubusercontent.com/33585301/120178215-e1eec700-c226-11eb-9469-8773cb946300.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120178254-efa44c80-c226-11eb-82b9-fd9071f28112.png)
+
+![image](https://user-images.githubusercontent.com/33585301/120178313-03e84980-c227-11eb-89ec-9beabd03298b.png)
+
+
+
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119476345-9aba8f00-bd6b-11eb-8e2b-f09be2b13100.png)
 
 
-____________________________
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119476389-a27a3380-bd6b-11eb-820f-697ef0299c4b.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120178822-85d87280-c227-11eb-8c85-1b1f3dd96042.png)
+
+
+
+There are multiple ways to connect ,download client file . To connect to openvpn we need a client 
+
+Connect using the configurtion file we got and the credetials 
+
+_______
+
+Create a pod that simply serves http request using apache httpd image in our eks cluster 
+
+![image](https://user-images.githubusercontent.com/33585301/120179077-c637f080-c227-11eb-92c0-a8e9de5f4149.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120179135-d5b73980-c227-11eb-8d9d-722c29813db6.png)
+
+![image](https://user-images.githubusercontent.com/33585301/120179886-c5ec2500-c228-11eb-98ff-545f3b1ff661.png)
+
+
+HOw this ip is actually in same cidr as our vpc 
+
+No output , as expected we are not able to get it because this is a private ip and we are not in the network 
+
+so let try to Connect up openvpn  client configuration
+
+![image](https://user-images.githubusercontent.com/33585301/120179175-de0f7480-c227-11eb-8d18-01fc86c493d2.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120179264-f4b5cb80-c227-11eb-82ec-0e16a77743b4.png)
+
+![image](https://user-images.githubusercontent.com/33585301/120179325-0ac38c00-c228-11eb-9ee2-db6e7427a219.png)
+
+
+Now the openvpn setup has worked , and now we can access from internet all our private resource in a secured manner
+
+___________________________
+
+# Accessing resources in a  secondary CIDR 
+
+The idea is to led openvpn completely setup so we dont have to comeback and do that when we introduce thos changes in the CNI plugins .
+
+change is pretty simple : we just have to configure openvpn to route our traffice to second cidr 
+
+Open the ssh port inthe security group of this machine so that we can connect to it 
+
+![image](https://user-images.githubusercontent.com/33585301/120180793-d51fa280-c229-11eb-8232-3b421a56a353.png)
+
+edit inbound rule , another rule with ssh open it anywhere (not recommended) just to make it easy 
+
+![image](https://user-images.githubusercontent.com/33585301/120180936-0304e700-c22a-11eb-93ac-892d1a5fc851.png)
+
+![image](https://user-images.githubusercontent.com/33585301/120181943-59bef080-c22b-11eb-8bb7-5dd676bf63e3.png)
+
+save the rules 
+
+_______________
+
+Come back to instances , openvpn server - connect - copy the example 
+
+
+![image](https://user-images.githubusercontent.com/33585301/120181033-229c0f80-c22a-11eb-9f70-627483f5e737.png)
+
+
+In the folder where have keypar which is used to create openvpn server . Copy the instruction to ssh into the machine (change username to openvpnas ) 
+
+![image](https://user-images.githubusercontent.com/33585301/120181257-6f7fe600-c22a-11eb-9292-e913d66356a5.png)
+
+
+--key already set up in CF template 
+
+--value secondary CIDR 
+
+
+Very similar to the userdata in the CF template , differnce is that we are setting up differnt CIDR in the second position of the private network we are going to routing our traffic to 
+
+Now we need to restart our servers 
+
+![image](https://user-images.githubusercontent.com/33585301/120181355-8f170e80-c22a-11eb-99c5-6e73d73b0df4.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120181481-c08fda00-c22a-11eb-942e-f6feb4b609f8.png)
+
+![image](https://user-images.githubusercontent.com/33585301/120181567-dbfae500-c22a-11eb-98e2-e757df139bb8.png)
+
+
+while we are doing this process of restarting openvpn connect will be lost . So probably has to disconnect and  we need to connect it again
+
+With all of these we already are prepared when those CNI changes come to our stack , and then after running all of those command inside openvpn server dont forgot to drop all ssh rules from the security gruop . then save the rule .
+
+![image](https://user-images.githubusercontent.com/33585301/120181620-f339d280-c22a-11eb-93e2-88fd3f3652d2.png)
+
 
 
 https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/cloudformation/openvpn/openvpn-with-secondary-cidr.yaml
