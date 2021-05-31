@@ -299,6 +299,17 @@ With all of these we already are prepared when those CNI changes come to our sta
 
 ![image](https://user-images.githubusercontent.com/33585301/120181620-f339d280-c22a-11eb-93e2-88fd3f3652d2.png)
 
+Drop the pod 
+
+![image](https://user-images.githubusercontent.com/33585301/120183281-1ebdbc80-c22d-11eb-819a-8346bc21a905.png)
+
+Clean up of what we have to created 
+
+go to cloudformation -> openvpn setup -> select the stack -> Delete 
+
+
+![image](https://user-images.githubusercontent.com/33585301/120183459-575d9600-c22d-11eb-9665-beaab8ceb448.png)
+
 
 
 https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/cloudformation/openvpn/openvpn-with-secondary-cidr.yaml
