@@ -80,15 +80,51 @@ Note the AMI id from here
 
 ____________________________
 
-OpenVPN cloudformation
+## Review OpenVPN cloudformation template 
+
+
+![image](https://user-images.githubusercontent.com/33585301/120166424-2e7fd580-c21a-11eb-99db-59f43d89cb10.png)
+
+## Parameter
+
+![image](https://user-images.githubusercontent.com/33585301/120166482-3e97b500-c21a-11eb-9dec-984ff9fdb8cf.png)
+
+![image](https://user-images.githubusercontent.com/33585301/120167923-ee215700-c21b-11eb-9c60-cf9374ccd78e.png)
+
+
+
+-we are going to need the AMI id 
+-the node volume size which is disk size in GB of the EBS we are attaching to the machine 
+-the pem file we are going to be using to sh to the machine if required 
+- the node instance type ec2 instance type 
+- 2 parameter of the autoscaling group which are the minimum and maximum size of it (in this case 1 ) 
+- subnet id were this is going to be located , in the architecture openvpn machine need to be sit in the public subnet (any of them  ) , in the CF stack we need to select the public subnet in here , autoscaling group can decide were to put it .
+- VPCID we created with eksctl 
+- vpc cidr 
+- allowed ip range which is basically to who we are giving access to the machine as you can see by default simply letting everybody to connect to this one (we can be more strict depending on the company policy ) 
+- preconfigured openvpn machine  with  username & a password are the initial one we are going to use for accesing this machine 
+
+## Resources 
+
+![image](https://user-images.githubusercontent.com/33585301/120168407-70118000-c21c-11eb-8d9e-28f550bb7624.png)
+![image](https://user-images.githubusercontent.com/33585301/120168946-12316800-c21d-11eb-8f4e-e41edaa5e090.png)
+
+
+
+- security group  allowing multiple TCP portS  443 ,943 ,945
+- security group  allowing  UDP  port 1194 which is actually were the connection happens all of this port are describing open vpn 
+
+
 
 
 https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/cloudformation/openvpn/openvpn.yaml
 
+## GUI Parameters 
+
 ![image](https://user-images.githubusercontent.com/33585301/119475782-136d1b80-bd6b-11eb-8772-df9c99727fdc.png)
 
 
-____________________________
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119475922-35669e00-bd6b-11eb-8978-35109662f191.png)
 
