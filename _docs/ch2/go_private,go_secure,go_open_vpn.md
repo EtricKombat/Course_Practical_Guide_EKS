@@ -142,19 +142,26 @@ Ref OpenVPN: https://openvpn.net/vpn-server-resources/getting-started/
 
 ![image](https://user-images.githubusercontent.com/33585301/119475922-35669e00-bd6b-11eb-8978-35109662f191.png)
 
+## Stack created 
 
+![image](https://user-images.githubusercontent.com/33585301/120177107-abfd1300-c225-11eb-903b-4727b55a3ac0.png)
 
+![image](https://user-images.githubusercontent.com/33585301/120177140-b7e8d500-c225-11eb-8c95-75a1060d7196.png)
 
 
 ____________________________
 
 # OpenVPN along with the security group created
 
-![image](https://user-images.githubusercontent.com/33585301/120171873-1d39c780-c220-11eb-926d-3b78727a20a1.png)
+![image](https://user-images.githubusercontent.com/33585301/120177342-f8485300-c225-11eb-97d5-e365e6b59dff.png)
 
 Allow the security group of the open vpn machine for accessing the worker node of our eks cluster 
 
+OpenVPN Security group -> copy the id 
+
 ![image](https://user-images.githubusercontent.com/33585301/120172316-86b9d600-c220-11eb-9165-8b29e2f469d8.png)
+
+# worker node security group
 
 open one of the worker nodes 
 
@@ -162,9 +169,14 @@ open one of the worker nodes
 
 
 
-_____________
 
-# worker node security group
+Worker node security group - > edit it -> allow all the triaffic of security grup of openvpn - SAVE
+
+![image](https://user-images.githubusercontent.com/33585301/120177462-1615b800-c226-11eb-9704-d5568c343689.png)
+
+
+
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119476164-7068d180-bd6b-11eb-9ade-c3121b543034.png)
 
