@@ -148,7 +148,23 @@ Ref OpenVPN: https://openvpn.net/vpn-server-resources/getting-started/
 
 ____________________________
 
-worker node security group
+# OpenVPN along with the security group created
+
+![image](https://user-images.githubusercontent.com/33585301/120171873-1d39c780-c220-11eb-926d-3b78727a20a1.png)
+
+Allow the security group of the open vpn machine for accessing the worker node of our eks cluster 
+
+![image](https://user-images.githubusercontent.com/33585301/120172316-86b9d600-c220-11eb-9165-8b29e2f469d8.png)
+
+open one of the worker nodes 
+
+![image](https://user-images.githubusercontent.com/33585301/120172391-9d602d00-c220-11eb-8f88-b41a3ff462fc.png)
+
+
+
+_____________
+
+# worker node security group
 
 ![image](https://user-images.githubusercontent.com/33585301/119476164-7068d180-bd6b-11eb-9ade-c3121b543034.png)
 
