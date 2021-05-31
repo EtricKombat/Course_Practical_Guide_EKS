@@ -99,7 +99,7 @@ ____________________________
 - the node instance type ec2 instance type 
 - 2 parameter of the autoscaling group which are the minimum and maximum size of it (in this case 1 ) 
 - subnet id were this is going to be located , in the architecture openvpn machine need to be sit in the public subnet (any of them  ) , in the CF stack we need to select the public subnet in here , autoscaling group can decide were to put it .
-- VPCID we created with eksctl 
+- VPCID we created with eksctl in previous lab 
 - vpc cidr 
 - allowed ip range which is basically to who we are giving access to the machine as you can see by default simply letting everybody to connect to this one (we can be more strict depending on the company policy ) 
 - preconfigured openvpn machine  with  username & a password are the initial one we are going to use for accesing this machine 
@@ -108,12 +108,25 @@ ____________________________
 
 ![image](https://user-images.githubusercontent.com/33585301/120168407-70118000-c21c-11eb-8d9e-28f550bb7624.png)
 ![image](https://user-images.githubusercontent.com/33585301/120168946-12316800-c21d-11eb-8f4e-e41edaa5e090.png)
+![image](https://user-images.githubusercontent.com/33585301/120169829-f9758200-c21d-11eb-9763-559a599b1b70.png)
+
+![image](https://user-images.githubusercontent.com/33585301/120170499-a51ed200-c21e-11eb-9a05-bc8855c18d42.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120170323-799be780-c21e-11eb-84ec-17f68029567d.png)
 
 
 
-- security group  allowing multiple TCP portS  443 ,943 ,945
-- security group  allowing  UDP  port 1194 which is actually were the connection happens all of this port are describing open vpn documentation
-
+- security group ingress allowing multiple TCP portS  443 ,943 ,945
+- security group ingress allowing  UDP  port 1194 which is actually were the connection happens all of this port are describing open vpn documentation
+- security group Egress allowing everything to go out from the security 
+- IAM role (NodeRole) using the policy down (NodeRolePolicies) which is actually denying everything , we are creating this to not create an ec2 instance without an IAM attached to it which is not a good pratice 
+- the instance profile which is at the end which is attached to the ec2 instance 
+- Autoscaling group (nodegroup ), with the node launch configuration , b/w these 2 we are actually configuring the autoscaling group to locate our machines into the subnet,vpcs and all the configuration required for the it . 
+- userdata specified on the launch configuration 
+- openvpn has a program called sacli which allow to set configuration of software itself , setting a key which is parivate network , for specifying the open vpn service that we , parameter we are sending to for the cloudformation template . Used as our target 
+- creating the first user with parameters as well
+- then we start this .
 
 
 Ref CF: https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/cloudformation/openvpn/openvpn.yaml
@@ -128,6 +141,9 @@ Ref OpenVPN: https://openvpn.net/vpn-server-resources/getting-started/
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119475922-35669e00-bd6b-11eb-8978-35109662f191.png)
+
+
+
 
 
 ____________________________
