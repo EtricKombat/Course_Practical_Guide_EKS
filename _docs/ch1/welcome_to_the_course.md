@@ -26,6 +26,7 @@ We will start for the scratch from an already developed project and easy to unde
 ______________________
 
 K8s - We will need to know how k8S works and its different components 
+
 EKS stands for Elastic Kubernetes services , it is one of the  container platform on AWS like ECS or ECR  . 
 
 ![image](https://user-images.githubusercontent.com/33585301/119450853-26bfbd00-bd52-11eb-88b5-6b6f4fa58253.png)
