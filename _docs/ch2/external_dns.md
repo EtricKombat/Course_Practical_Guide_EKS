@@ -10,12 +10,22 @@
 
 ## 10. External DNS
 
+We are going to be reviewing  the architecture that will make this tool shine in our solution .
+
+
+
+
+Lets start with our k8s cluster which is already up and running 
 
 ![image](https://user-images.githubusercontent.com/33585301/119494640-27bb1380-bd7f-11eb-8d3a-916e274b22e3.png)
 
+____________________
+
+The way external dns works is  , we have an application running on a pod and with a service in front 
 
 ![image](https://user-images.githubusercontent.com/33585301/119494680-34d80280-bd7f-11eb-9ab6-e0069f2b24ec.png)
 
+____________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119494770-4b7e5980-bd7f-11eb-8e2c-b8c8f42022ff.png)
 
