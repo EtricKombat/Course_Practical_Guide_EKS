@@ -111,32 +111,35 @@ ____________
 ![image](https://user-images.githubusercontent.com/33585301/119618557-a6b45880-be20-11eb-814d-c18f33e8e9eb.png)
 
 2) They suggested us to create an iam role using the policy and there are multiple ways of doing this using  kiam,kube2iam , 
-__________
 
 
-Last one is not recommended , going to use this one so that have quick understanding how this will work but eventually in the 3rd chapter we are going to correct this and we are actually going to expand this towards the rest of our application 
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119618609-b469de00-be20-11eb-971e-81edb0583044.png)
 
 
 
 
-________________-
+________________
+
+Last one is not recommended , going to use this one so that have quick understanding how this will work but eventually in the 3rd chapter we are going to correct this and we are actually going to expand this towards the rest of our application 
 
 ![image](https://user-images.githubusercontent.com/33585301/119618630-bc298280-be20-11eb-8ac7-a9207927010e.png)
 
 
-https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md
+
+
+The 3rd solution they provide simply gives permission for managing that hosted zone to the instance role that is running worker nodes 
 
 
 
 
 
-https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/k8s-tooling/1-external-dns/01-initial-external-dns.yaml
+______________
 
-https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/k8s-tooling/1-external-dns/02-testing-external-dns.yaml
+## Management console 
 
-
+### CloudFormation create stack
 
 
 
@@ -149,29 +152,111 @@ https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastruc
 ![image](https://user-images.githubusercontent.com/33585301/119618864-00b51e00-be21-11eb-8db0-3d06450aa45a.png)
 
 
+____________________
+
+## Running worker nodes
+
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119618993-2a6e4500-be21-11eb-802c-3f1579d06819.png)
 
 
+Attach policy -> look for external DNS (CLOUDFORMATION has created ) 
 
 ![image](https://user-images.githubusercontent.com/33585301/119618899-0e6aa380-be21-11eb-8e71-e1412139decf.png)
 
 ![image](https://user-images.githubusercontent.com/33585301/119619074-3f4ad880-be21-11eb-8f98-749b1e565336.png)
 
 
+The policy that external dns is suggesting for us to create 
 
 
 _________
 
 
+Back at external dns doc -> Manifest file ( for cluster with RBAC enabled ) to install this application into our cluster 
+
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119619246-6a352c80-be21-11eb-930f-52b421955d6c.png)
 
+It will create the following 
 
 ![image](https://user-images.githubusercontent.com/33585301/119619267-702b0d80-be21-11eb-9b8b-5b0c8395ce10.png)
+
+and also with latest image of external dns application
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119619323-7de09300-be21-11eb-885a-e04aa9995229.png)
 
+comes with these arguments 
+
 ![image](https://user-images.githubusercontent.com/33585301/119619347-83d67400-be21-11eb-959f-dc3d7fcbadd6.png)
+
+
+-if the source is a service and or ingress 
+-apply domain filter like everything on this subdomain 'external-dns-test.my-org.com' will be taken by external dns as a subject 
+- aws provider
+- upsert-only ,  it wont delete whenever remove a  service 
+- zone type public or private 
+- 
+
+Something important to take a look in here  is this annotation is in 'iam.amazonaws.com/role' this is  only in the case of kiam or k2iam 
+in our case we are not using any of them and we wont (we are going to get rid of that annotation for now)  
+
+![image](https://user-images.githubusercontent.com/33585301/120268995-8f63e800-c2c4-11eb-81bd-67b56637d204.png)
+
+________________
+
+
+![image](https://user-images.githubusercontent.com/33585301/120269285-2335b400-c2c5-11eb-8779-73a74fddffcc.png)
+
+
+We are gonna find a yaml file with a service type load balancer 
+
+![image](https://user-images.githubusercontent.com/33585301/120269242-0ef1b700-c2c5-11eb-9f3b-694171529dcf.png)
+
+and external-dns.alpha.kubernetes.io/hostname which is holding the dns of the subdomain of our application so it is important and we have change that from our side 
+
+
+![image](https://user-images.githubusercontent.com/33585301/120269222-04cfb880-c2c5-11eb-9eaf-bbd75f8645ad.png)
+
+
+
+and a deployment of a simple nginx docker that ofcourse will display the splash screen off , we are going to use this one off for testing our installation 
+
+![image](https://user-images.githubusercontent.com/33585301/120269556-ace58180-c2c5-11eb-8cee-aee0e767d3a4.png)
+
+
+
+______
+
+# in terminal 
+
+![image](https://user-images.githubusercontent.com/33585301/120269675-e28a6a80-c2c5-11eb-9116-0dcd1d205359.png)
+
+1) installing all the components  , cluster role , service account , cluster role binding and the deployment of the application itself 
+2) is the deployment of the simple nginx site & its service with load balancer type 
+
+
+so before continue we need to change the dns that the testing external dns file has on it so you will match the hosted zone 
+
+
+_____________________
+
+Reference link
+
+
+
+https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md
+
+
+
+https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/k8s-tooling/1-external-dns/01-initial-external-dns.yaml
+
+https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastructure/k8s-tooling/1-external-dns/02-testing-external-dns.yaml
+
+
 
 
 
