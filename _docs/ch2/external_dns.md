@@ -276,44 +276,88 @@ Lets try to see what the logs say about this one . The latest logs is watching t
 ![image](https://user-images.githubusercontent.com/33585301/120273509-37c97a80-c2cc-11eb-89eb-6508decfe54f.png)
 
 
+classic load balancer internet facing , this is setup in this way because the type of load balancer specified is the default one
+so everything is going to be default in here. 
+
 ![image](https://user-images.githubusercontent.com/33585301/120273536-41eb7900-c2cc-11eb-8958-7390b14ad85a.png)
+
+In instances section we can see that everthing now is in service (if not in service that mean the instances are still registering to load balancers )
+
+
+____
+
+in terminal 
+
+lets check again the loads of external dns pods ( created the A record & TXT record 
 
 
 ![image](https://user-images.githubusercontent.com/33585301/120273587-5596df80-c2cc-11eb-98c0-b766bf3b4cbe.png)
+
+_____
+
+
+Review the 2nd yaml file created . In the annotation (external-dns-alpha.kubernetes.io/hostname) specified the dns we wanted (testing-external-dns.dev.mariomerco.com) 
+as we could already see in the logs it is already created .
 
 
 ![image](https://user-images.githubusercontent.com/33585301/120273615-60517480-c2cc-11eb-917f-de9eb2df3ae8.png)
 
 
+
+here it is ... it means it is working . We dont even have to look at the route53 table 
+
 ![image](https://user-images.githubusercontent.com/33585301/120273634-65aebf00-c2cc-11eb-93a8-f0bfda4e710e.png)
 
+
+
+___________________
+
+Only missing one thing ... the ACM certificated in the previous lab for accessing these page through the https protocol because as you can see 
+above we are not using secure connection 
 
 ![image](https://user-images.githubusercontent.com/33585301/120273773-90991300-c2cc-11eb-997e-8ac9d97c0dbb.png)
 
 
+certificate we created in the previous lectures and grab the ARN , we are gonna need it because we have to specify 3 more annotations and another port for the deployments
+, lets go to the code again add those
+
+1) arn for the cert
+2) http , because our application is running on http
+3) name of the ports for ssl certificating and end points , down in loadbalancer have to create another port (443 ) which name is https which should align , and the target port is same as the container down
+
 ![image](https://user-images.githubusercontent.com/33585301/120273944-cb02b000-c2cc-11eb-9c08-7a7ef1e7a165.png)
+
+![image](https://user-images.githubusercontent.com/33585301/120297124-6b190300-c2e6-11eb-8bfe-2fd5173eae71.png)
+
 
 __________
 
-The deployment hasn't changed but the service is 
+The deployment hasn't changed but the service did
 
 ![image](https://user-images.githubusercontent.com/33585301/120274030-e79ee800-c2cc-11eb-984e-e531f84cf494.png)
 
 ____________
 
-load balancer 
+aws management console - > ec2-> load balancer 
 
 ![image](https://user-images.githubusercontent.com/33585301/120274166-14eb9600-c2cd-11eb-9ce4-bc79a9fbb42b.png)
 
+if we go to listners , we finds that there is another one called https listening to the port 443 and it has an ssl certificate 
+
 _________
 
+which means that if we go to dns once again , and put https in front of it . Now we are navigating through our application using ssl 
 
 ![image](https://user-images.githubusercontent.com/33585301/120274247-2f257400-c2cd-11eb-90b4-74bf4081c2d5.png)
 
 
+so all of these are pointing that our external dns is working correctly and we could verify that our certificate we install previously also is covering the dns that we want
+again without even have to open route53 for doing anytrhing it is no longer required unless you need to do something else for a very specific scenerio 
+
 ![image](https://user-images.githubusercontent.com/33585301/120274263-364c8200-c2cd-11eb-8b4c-0dae747a04c6.png)
  
- navigating throught our application using ssl , all of this prove that external dns connection is working correctly 
+
+Now we have everything to install bookstore app
 
 _____________________
 
