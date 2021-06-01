@@ -37,7 +37,8 @@ Pre-requesite for successfully complete for this lab .
 all of these pre-requestite has been covered  
 ___________
 
-Helm for installaing micro services  (resource api , client, inventory )
+Helm for installaing micro services  (resource api , client, inventory ).
+In the resources of this lecture we can find resources about what is helm
 
 ![image](https://user-images.githubusercontent.com/33585301/119611531-71a40800-be18-11eb-9aef-249b9ea025b5.png)
 
