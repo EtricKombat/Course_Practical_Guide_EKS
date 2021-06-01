@@ -255,8 +255,65 @@ so we need to put subdomain that falls into the hosted zone that is in our accou
 ![image](https://user-images.githubusercontent.com/33585301/120270477-511bf800-c2c7-11eb-87b5-3055723b1077.png)
 
 
-the 'dev.mariomerco.com' in the authorz case is been managed by the hosted zone in his account 
+the 'dev.mariomerco.com' in the authorz case is been managed by the hosted zone in his account .
 
+make sure what is the subdomain or domain that you have in your hosted zone , and make sure it annotations curresponds to it .
+
+
+## back to terminal 
+
+Lets create the first one , lets look at what we have in our pods . Here there is external DNS already running .
+Lets try to see what the logs say about this one . The latest logs is watching towards our events 
+
+![image](https://user-images.githubusercontent.com/33585301/120273145-bc67c900-c2cb-11eb-8cf1-1ec534b4435f.png)
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/120273342-005ace00-c2cc-11eb-8a55-1d4e0279eb45.png)
+
+## aws console load balancer 
+
+![image](https://user-images.githubusercontent.com/33585301/120273509-37c97a80-c2cc-11eb-89eb-6508decfe54f.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120273536-41eb7900-c2cc-11eb-8958-7390b14ad85a.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120273587-5596df80-c2cc-11eb-98c0-b766bf3b4cbe.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120273615-60517480-c2cc-11eb-917f-de9eb2df3ae8.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120273634-65aebf00-c2cc-11eb-93a8-f0bfda4e710e.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120273773-90991300-c2cc-11eb-997e-8ac9d97c0dbb.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120273944-cb02b000-c2cc-11eb-9c08-7a7ef1e7a165.png)
+
+__________
+
+The deployment hasn't changed but the service is 
+
+![image](https://user-images.githubusercontent.com/33585301/120274030-e79ee800-c2cc-11eb-984e-e531f84cf494.png)
+
+____________
+
+load balancer 
+
+![image](https://user-images.githubusercontent.com/33585301/120274166-14eb9600-c2cd-11eb-9ce4-bc79a9fbb42b.png)
+
+_________
+
+
+![image](https://user-images.githubusercontent.com/33585301/120274247-2f257400-c2cd-11eb-90b4-74bf4081c2d5.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120274263-364c8200-c2cd-11eb-8b4c-0dae747a04c6.png)
+ 
+ navigating throught our application using ssl , all of this prove that external dns connection is working correctly 
 
 _____________________
 
