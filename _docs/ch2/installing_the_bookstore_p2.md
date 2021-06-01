@@ -14,9 +14,27 @@
 ![image](https://user-images.githubusercontent.com/33585301/119611334-2c7fd600-be18-11eb-9932-283b93fc0977.png)
 
 
+In the previous lecture we configure and instaled everything we required for this solution .
+
+In this one we are going to install the applicatin itself .
+
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119611519-68b33680-be18-11eb-8be8-01ed382310c5.png)
 
+
+Pre-requesite for successfully complete for this lab . 
+
+
+1) eks control plane up and running 
+2) worker nodes attached to this eks control  plane which is pod for atlead 6 new pods , in previous lecture we increase instance type of the worker node to support more pods 
+3) we use open vpn for this in our stack . 
+4) with CF template are in the github repo and we created in our prev chapeter . 
+5) external dns installed in our cluster and all the iam permission it need to attach in the worker nodes 
+6) same thing for the applicatin load balancer controller . 
+7) full dynamodb permissions in our woker nodes , so tha apps can use it to access date in the table 
+
+all of these pre-requestite has been covered  
 ___________
 
 Helm for installaing micro services  (resource api , client, inventory )
