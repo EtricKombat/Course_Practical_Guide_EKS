@@ -38,47 +38,96 @@ all of these pre-requestite has been covered
 ___________
 
 Helm for installaing micro services  (resource api , client, inventory ).
-In the resources of this lecture we can find resources about what is helm
+Below links contains what is helm how it works , how can you install it depending on you OS 
+
+https://helm.sh/
+
+https://helm.sh/docs/
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119611531-71a40800-be18-11eb-9aef-249b9ea025b5.png)
+
+
+we have 5 folders that match microservices , each of them have an infra folder and inside it helm folder 
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119611629-94362100-be18-11eb-84de-73dab6314ac0.png)
 
 
+_________
+
+we will be creating 2 things :
+ 1) deployment itself which is a k8s deployment , which container will be the image of the renting api in this case 
+
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119611905-e70fd880-be18-11eb-9460-70fcee2daeb3.png)
+
+ 2) service for exposing that 
 
 ![image](https://user-images.githubusercontent.com/33585301/119611950-f2630400-be18-11eb-9acc-7ad4e0e7d40a.png)
 
+3) if we go to values we are going to find the service type is node port , which is fine for what we are going to be doing next 
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119611980-f98a1200-be18-11eb-90cf-5f03490b0182.png)
 
+this is simple helm chart , we will be exactly the same for resource api , inventory api, and clients api 
 
+front end helm chart is little bit differnt 
 _____________
 
 Helm for installaing micro services  (front end )
 
 ![image](https://user-images.githubusercontent.com/33585301/119612277-5259aa80-be19-11eb-953d-e07050a4efbd.png)
 
+deployment with the continer of the front end 
+
 ![image](https://user-images.githubusercontent.com/33585301/119612296-584f8b80-be19-11eb-8854-11b2414a5859.png)
 
+and its service 
 
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119612083-1cb4c180-be19-11eb-9f92-3192e9cdec55.png)
 
 
+we have deployment of the proxy that we connect the front end with all the APIs 
+
 ![image](https://user-images.githubusercontent.com/33585301/119612328-61d8f380-be19-11eb-933a-c9f4df9da0d4.png)
 
+and its services , 
+
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119612370-70270f80-be19-11eb-958f-ab86f9923282.png)
+
+since thise proxy ngix running behind the scenes we are customizing itz configuration , we put all oof that in a config map . this is an nginx configuration for allowing the proxy to redirect all the request to the api in the back end from the front end 
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119612514-9a78cd00-be19-11eb-99f8-b103d4990593.png)
 
 
+and also we have secret.yml which presents one value in the data  , this config the json file which is actually get & replaced using the gold template functionality that helm  provides . Is basically  json file actaully front end applicatin requires for getting all the endpoint of our application .
+Lets take a look at this file because it is important .
+
+
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119612540-a49acb80-be19-11eb-84aa-dc3be6efc45e.png)
 
 
+Json file with some gold template tags in here . we are going to look at this on in a second .
+
+As you can see this is a config file that has the url of the resource api , inventory, client, renting api that are exposed through the proxy .
+
+So it means that the front end will request this file and from it get the location of where the apis should be .
+
+so given this background you ll need to go to the values.yaml file in the front end helm chart 
+
 ![image](https://user-images.githubusercontent.com/33585301/119612852-052a0880-be1a-11eb-8c92-12f3444465e7.png)
 
+In here the api: url  , this is the url of the proxy 
 
 
 ________________
