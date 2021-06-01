@@ -357,7 +357,14 @@ again without even have to open route53 for doing anytrhing it is no longer requ
 ![image](https://user-images.githubusercontent.com/33585301/120274263-364c8200-c2cd-11eb-8b4c-0dae747a04c6.png)
  
 
-Now we have everything to install bookstore app
+Now we have everything set up before we start installing bookstore applilcation into our k8 cluster 
+
+______________
+
+before moving to next cleanup 
+
+![image](https://user-images.githubusercontent.com/33585301/120298633-e4fdbc00-c2e7-11eb-9c4c-a9d9a01de23d.png)
+
 
 _____________________
 
