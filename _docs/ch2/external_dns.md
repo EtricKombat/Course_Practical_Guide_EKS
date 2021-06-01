@@ -238,8 +238,24 @@ ______
 1) installing all the components  , cluster role , service account , cluster role binding and the deployment of the application itself 
 2) is the deployment of the simple nginx site & its service with load balancer type 
 
+![image](https://user-images.githubusercontent.com/33585301/120270297-ff736d80-c2c6-11eb-8733-7cf8317af782.png)
 
-so before continue we need to change the dns that the testing external dns file has on it so you will match the hosted zone 
+
+
+so before continue we need to change the dns that the testing external dns file has on it so you will match the hosted zone on our account 
+Go to the code 
+
+
+![image](https://user-images.githubusercontent.com/33585301/120270331-10bc7a00-c2c7-11eb-851e-2d2b063e99c2.png)
+
+under the metadata section we have the annotation for external-dns.alpha.kuberntes.io/hostname
+
+so we need to put subdomain that falls into the hosted zone that is in our account 
+
+![image](https://user-images.githubusercontent.com/33585301/120270477-511bf800-c2c7-11eb-87b5-3055723b1077.png)
+
+
+the 'dev.mariomerco.com' in the authorz case is been managed by the hosted zone in his account 
 
 
 _____________________
