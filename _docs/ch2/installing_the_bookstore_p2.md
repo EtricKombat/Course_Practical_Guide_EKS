@@ -335,9 +335,27 @@ we will be able to see all the http call front end is doing to back end
 
 ![image](https://user-images.githubusercontent.com/33585301/119617633-a8315100-be1f-11eb-9f2c-c4a1f42f620e.png)
 
-as you can see the the end point here is using the api 
+
+as you can see the the end point here is using the api (https://api.dev.mariomeroc.com/clients-api)  for this example 
 
 
+![image](https://user-images.githubusercontent.com/33585301/120441383-1d61d080-c3a2-11eb-8fda-ce85625b8fc2.png)
 
-![image](https://user-images.githubusercontent.com/33585301/119617682-b2ebe600-be1f-11eb-9384-bbbcf53057c7.png)
+
+if we open resources the end point will be (https://api.dev.mariomeroc.com/resource-api)
+
+which is what we have specified on the proxy 
+
+
+![image](https://user-images.githubusercontent.com/33585301/120441419-294d9280-c3a2-11eb-941c-3be88ea9e947.png)
+
+
+Now we have deployed everything we required for this solution to run  and to be exposed through a load balancer using a dns and using ssl terminated communication b/w you and the server .
+
+keep in mind that this is also possible because connect to vpn that we have established . So all of these resources are private . 
+If not in vpn it wont load simply because not in that private network , so from here we are going to start adding customization making this solution more reliable 
+more secure and more automation oriented .
+
+This is our base line although later in this course we are going to create an production environemnt we will continue walking through the whole solution from the conception of the code building it and deploying all the way up to the production . 
+
 
