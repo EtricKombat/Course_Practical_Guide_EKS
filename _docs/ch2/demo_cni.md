@@ -13,14 +13,52 @@
 ![image](https://user-images.githubusercontent.com/33585301/119605817-0c97e480-be0f-11eb-933d-1b9c2f74f089.png)
 
 
+In this lab we are going to start creating and make it real all the customization were talked about in the previousl lecture on the CNI plugin 
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119606000-6698aa00-be0f-11eb-9e88-8eb40c9824be.png)
+
+
+Lets check the container ip just to see what for example  what the inventory API has : 
+
+the ip is 10.0.97.55 , in the previous lecture we been using cidr of the vpc (10.0.0./16) , the possiblity the CNI gives us is to expand this range is to secondary
+cidr on our vpc 
+
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119605967-541e7080-be0f-11eb-86f3-d49b326c3165.png)
 
+for doing that we need to customize our vpc
+
+1) for adding our cidr
+2) we need to create some new subnet using the new cidr 
+3) we need to attach them to some route tables and point them to NAT table because we want these subnet to be private 
+
+all of these can be done in the management console . 
+
+
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119606141-a1024700-be0f-11eb-8c95-2740649ca922.png)
 
+
+
+
+
+
 ===
+
+but inorder to maintain a repeatble patter in our architecture we are going to be doing all of these through our bash script 
+
+
+
+![image](https://user-images.githubusercontent.com/33585301/120460262-979c5000-c3b6-11eb-974e-926f3d5d2d05.png)
+
+inside infrastructure/k8s-tooling/3-cni/
+
+- script
+- CF template (subnet.json)
+- 3 yaml files 
 
 Resources 
 
@@ -47,10 +85,100 @@ https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastruc
 
 _________________________
 
+## in the code editor : 
+
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119606486-4f0df100-be10-11eb-9616-127055e07470.png)
 
+
+![image](https://user-images.githubusercontent.com/33585301/120461374-94ee2a80-c3b7-11eb-9e64-1c0a697aa4b1.png)
+
+
+part-1
+we have a series of variables 
+
+- with the CF stackname of the cluster
+- with the region which we are going to be deployed into
+- cluster name 
+- the secondary cidr 
+- cidr of 3 new subnets we are going to be creating , keep in mind that these cidr need to be part of main one . 
+
+part-2 
+
+we are going to get tehe vpc id using the aws cli cloudformation command describing the stack resources and getting the vpc id 
+
+Then we are going to use again the aws cli but this time for associating the secondary cidr block to vpc 
+
+Then we are gonna retrive the nat gateway id again doing a describe natgatway command from the ec2 section of the aws cli & retrieving the id 
+
+
+part-3 
+
+we are gonna deploy our cloudformation stack 
+
+which template is subnet.json 
+
+overriding all the parameters that we have in this script
+
+
+
+Quick note in here is that , everything that in this script is creating could be done throught the aws management console . through a manual process 
+
+Refer link (help setup secondary ) : https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing
+
+doing this way to avoid error from manual process 
+
+____________________________
+
+Check our CF template 
+
+
+![image](https://user-images.githubusercontent.com/33585301/120462881-f9f65000-c3b8-11eb-9c4e-dd946424536e.png)
+
+
+![image](https://user-images.githubusercontent.com/33585301/120464032-1c3c9d80-c3ba-11eb-92e6-586571b7a5dc.png)
+
+![image](https://user-images.githubusercontent.com/33585301/120464064-25c60580-c3ba-11eb-9229-31eba3e23587.png)
+
+![image](https://user-images.githubusercontent.com/33585301/120464094-2fe80400-c3ba-11eb-8550-bdf4e7859e60.png)
+
+
+
+Specially we will be able to see  : subnetA, subnetB, subnetc 
+
+
+![image](https://user-images.githubusercontent.com/33585301/120464181-468e5b00-c3ba-11eb-918b-2a9670a02409.png)
+
+
+down route table for the subnet a , route table for the subnet b , route table for the subnet c 
+
+down route specific to the nat gatway A attaching it to subnet A ,route specific to the nat gatway B attaching it to subnet B ,  route specific to the nat gatway c attaching it to subnet c
+
+
+![image](https://user-images.githubusercontent.com/33585301/120463923-03cc8300-c3ba-11eb-9f35-3731c08f1886.png)
+
+
+so what CF is actually  doing is creating those extra subnet we need in that secondary cidr on our vpc and creating the route tables and routes for allowing the traffic to go to  the nat gateway and by default aws wants to create secondary cidr will modify the route table so we dont have todo anything else . 
+
+
+![image](https://user-images.githubusercontent.com/33585301/120464753-e815ac80-c3ba-11eb-81f8-e2632e9bce14.png)
+
+
+outputing all the subnet ids
+
+
+___________________
+
+
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119606739-b62ba580-be10-11eb-9bfb-2a6c540caa2c.png)
+
+
+
+
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119606823-d8bdbe80-be10-11eb-8a3a-233cf80b6e80.png)
 
