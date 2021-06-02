@@ -176,25 +176,64 @@ ___________________
 ![image](https://user-images.githubusercontent.com/33585301/119606739-b62ba580-be10-11eb-9bfb-2a6c540caa2c.png)
 
 
+It already associate the secondary cidr , itz going to retrive the nat gateway and CF stack is created . 
 
 
-
+IN the resources of CF , we are going to find all the route tables , the routes & the subnets . 
 
 ![image](https://user-images.githubusercontent.com/33585301/119606823-d8bdbe80-be10-11eb-8a3a-233cf80b6e80.png)
 
+
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119606949-1884a600-be11-11eb-9c37-226b61bd37aa.png)
+
+we will find 3 new subnets all of them with secondary on there name , if we scroll to the right we will see the IPv4 cidr start with 100.64. and so on 
+
+so it means that we have vpc specified for start customizing our CNI pLUGIN 
+
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119606966-21757780-be11-11eb-8b80-5eb2d407ec1a.png)
 
 
 ______________
 
+CNI is already running in here  . Deamonset running in kube-system namespace , 'aws-node' has CNI plugin on it 
+
+The method used for customizing this is throught : 
+
+1) env variable
+2) ENI config resource , which is a custom resource definitin on k8S
+
+
+Ref : link to list of env variable that can be used for customizing CNI 
+
+https://docs.aws.amazon.com/eks/latest/userguide/pod-networking.html
+
+https://docs.aws.amazon.com/eks/latest/userguide/cni-custom-network.html
+
+
+
+
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119607181-77e2b600-be11-11eb-8c87-1307bcb2a507.png)
 
 
 
+Make sure that version of the guide is higher than 1.6 . If we dont have this version (command :  kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/master/config/v1.6/aws-k8s-cni.yaml)
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119607440-f6d7ee80-be11-11eb-9772-6f2de7249e55.png)
 
+
+
+set 2 env variable to the demonset of the CNI 
+
+1) boolean that is to be set as true in order to customize the CNI behaviour 
+2) label of the worker node which value needs to match with the name of the any config the custom resource defintion we are about to create and CNI will use that one for 
+   assigning the configuration to this specific worker node 
 
 ![image](https://user-images.githubusercontent.com/33585301/119607515-1c64f800-be12-11eb-9d9f-95ba0d752a60.png)
 
