@@ -331,9 +331,12 @@ its working because we can see reources, clients, inventory for each of the reso
 
 If we open developer tool (browser) -> network -> clients
 
-we will be able to see all the http call front end is doing to back end as you can see the the end point here is using the api 
+we will be able to see all the http call front end is doing to back end 
 
 ![image](https://user-images.githubusercontent.com/33585301/119617633-a8315100-be1f-11eb-9f2c-c4a1f42f620e.png)
+
+as you can see the the end point here is using the api 
+
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119617682-b2ebe600-be1f-11eb-9384-bbbcf53057c7.png)
