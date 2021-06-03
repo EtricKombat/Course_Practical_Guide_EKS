@@ -61,32 +61,47 @@ Its important to notice that we have one ECR per micro service . Then after push
 ![image](https://user-images.githubusercontent.com/33585301/119656001-d034aa80-be47-11eb-834f-bd2fa8879d8d.png)
 
 Ths process is iterative allowing the development team to continue creating feature branhes of master and following the same process 
-Lets review all of the process 
 
 ________________________________
+
+Lets review more indepth  of the workflow now from the aws services used for making this real .
+
+We start from the source code which is stored in code commit repo 
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119656308-2ace0680-be48-11eb-9ece-3f7c4e89af39.png)
 
 
+when a new commit comes into the master branch it will trigger cloudwatch event that is listening this kind of events 
 
 ![image](https://user-images.githubusercontent.com/33585301/119656049-de82c680-be47-11eb-8006-a0bf90e84eda.png)
 
+then code pipeline appears to be the orchastrator of the stages of the workflow 
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119656066-e3e01100-be47-11eb-8303-d3634cab16e6.png)
 
+the first stage is source where the code is retrived by code build 
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119656080-e8a4c500-be47-11eb-98bf-688a5ec5b628.png)
 
+next we build docker and push it to ecr this is again code build
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119656108-efcbd300-be47-11eb-9f77-1566a234ce92.png)
 
+
+next phase is to grab the image that was recently pushed into ecr and deployed to the development environemt on k8s using helm 
+
 ![image](https://user-images.githubusercontent.com/33585301/119656413-4afdc580-be48-11eb-9594-e8c3ecc36638.png)
 
+After this step is done code pipeline will be waiting for a manual approval until lets say QA team validates the environment and give the greenlight to push to production 
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119656126-f65a4a80-be47-11eb-8065-8e6faf4dab36.png)
+
+Now when this step happens code build will push the version of the docker image into the prodcution that is the end of the workflow . 
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119656145-fd815880-be47-11eb-9a6a-405141ce713e.png)
@@ -100,5 +115,21 @@ _________________________
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119656589-7d0f2780-be48-11eb-8585-b732fa51f951.png)
+
+
+In a CICD work flow it is also important to define the versioning format that will be used .
+In our case this is how it is going to work .
+
+Each repostiory has version file which has 2 environment variables . 
+
+
+MARJOR & MINOR these 2 are number that we are going to use in the version tag 
+
+In the other hand we have code commit id or the git commit sha which is unique in whole repo and identify specific commit in the history.
+
+We are going to take the first 8 charater .
+
+So we take 2 components and build the version tags that will be used as tag for the docker image that will help us to identify version of the application and also to identify
+which specific commit was it created from . 
 
 
