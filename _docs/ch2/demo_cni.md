@@ -268,7 +268,14 @@ so for example if this is the us-east-2c it means it will reflect the configurat
 
 
 
+Once all the subnets , SG we want to use and put it in the corresponding AZ  configuration file and also the security group .
+For making it simple using the same 2 SG as worker but we can create any other specified in here  . 
+
+Lets create 3 files into ur cluster . 
+
 _____________________
+
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119608045-effdab80-be12-11eb-826d-51bd7bc28df2.png)
 
