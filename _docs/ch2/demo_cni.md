@@ -299,28 +299,69 @@ Go to the AWS console and drop the existing woker nodes (terminate)
 
 
 
+![image](https://user-images.githubusercontent.com/33585301/120619587-bca5c700-c479-11eb-8280-2d72bbabd274.png)
+
+
+
+select all the worker nodes , action-> terminate . Make you if you already in production you want to do this process at least you have some worker nodes for backing up 
+
+because this will drop all our work load . It will create a while to drop every thing and create new worker node and they get connected to our k8s cluster . 
+Wait until new 3 worker nodes come online . 
+
+
+Now we have 3 terminalte woeker nodes & 3 new ones . That replace them . 
+
+
+
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119608342-70bca780-be13-11eb-9e99-890937ad3409.png)
 
 
+So lets load our application . Here it is working correctly just as always which means that the configuration was 
+completely transparent 
+
 ![image](https://user-images.githubusercontent.com/33585301/119608388-8762fe80-be13-11eb-8675-863b07acda88.png)
 
+Lets take a look at real change . IPs . We should be able to see that the pods now have an IP of the secondary CIDR we attach to the vpc . 
 
+Get the pods of the namespace 'development'  
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119608487-a95c8100-be13-11eb-8928-af1637c596f5.png)
 
+
+Grep by ip , this is the ip of the range 100.64.0.0/16 which is that secondary IP range . 
+
+
+Now we have broader knowledge of now the networking and configuration of CNI works. 
+
+
 __________________
+
+Let review what we have done in this lab .
+
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119608741-196b0700-be14-11eb-9afb-be97c956d603.png)
 
 
+We start with our architecture , first thing we did was assign a secondary CIDR for this VPC 
+
 ![image](https://user-images.githubusercontent.com/33585301/119608854-44edf180-be14-11eb-9e62-1151a21f5255.png)
+
+Now inorder to use it we created 3 new subnets , under the new IP range . Let point the private subnet in the diagram as the new ones . 
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119608916-5d5e0c00-be14-11eb-8ec8-0d24838b7a12.png)
 
+From here we started doing our CNI customizations , so we could deploy our application into these new secondary IP range of our VPC and our application continue working correctly without any problems 
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119608577-d14be480-be13-11eb-8f62-424044d6676b.png)
+
+
+so thtz all we needed to know about CNI configuration , you can do all the customization you want . 
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119608619-e1fc5a80-be13-11eb-85d0-0774aab9460f.png)
