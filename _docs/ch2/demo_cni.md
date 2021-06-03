@@ -234,16 +234,41 @@ set 2 env variable to the demonset of the CNI
 1) boolean that is to be set as true in order to customize the CNI behaviour 
 2) label of the worker node which value needs to match with the name of the any config the custom resource defintion we are about to create and CNI will use that one for 
    assigning the configuration to this specific worker node 
+   
+   
+   ![image](https://user-images.githubusercontent.com/33585301/120596710-b1df3800-c461-11eb-8824-644dff596dcc.png)
+
+Lets take a look at one of the nodes and see what that label has as values 
+
+in the labels section we are going to find that , this specific node has the label that we specified in the environment varialble with the availablity zone name as value 
+this is very important , because now we have to create the ENI config using these values so as you know we are using a multi az deployment for cluster 
 
 ![image](https://user-images.githubusercontent.com/33585301/119607515-1c64f800-be12-11eb-9d9f-95ba0d752a60.png)
 
+And if we have 3 nodes 3 subnets and using the 3 availablity zone in these region each node should have us-east-2a,us-east-2b,us-east-2c
+
+This is important because the second configuration we set into deamonset we ll use these value and match it with the name of the custom resource definitions we are about to create .  
+   
 
 ![image](https://user-images.githubusercontent.com/33585301/119607805-939a8c00-be12-11eb-80ed-976531b2b910.png)
+
+
+Let look at how those custom resource should look like , its a very simple one.
+These resource works as a configuration for the CNI cluster to create pods in the specified subnet and with the specified security groups .
+These is were all the customization start happening . 
+
+
+keep something in mind , the name of the CRG(az)  is exactly the same name of the values that is appear in the nodes so CNI given in the second environment variable we said 
+is going to match that name with example this configuration . so all of them look exactly the same . What we have to do is to replace the subnet and the security group we want ot attach to each of them . 
+
+so for example if this is the us-east-2c it means it will reflect the configuration of these availablity zone we need to specify the subnet id of brand new subnet that lives in the secondary cidr of our vpc . So let me get those value of both subnet & security group that i want to attach . and put them in here . i invite to do exactly the same (use the needed subnet & security group you want in this files  ).
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119607820-9d23f400-be12-11eb-8625-57e8a3079fa7.png)
 
 
+
+_____________________
 
 ![image](https://user-images.githubusercontent.com/33585301/119608045-effdab80-be12-11eb-826d-51bd7bc28df2.png)
 
