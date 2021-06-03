@@ -367,3 +367,7 @@ so thtz all we needed to know about CNI configuration , you can do all the custo
 ![image](https://user-images.githubusercontent.com/33585301/119608619-e1fc5a80-be13-11eb-85d0-0774aab9460f.png)
 
 
+And for learning more about it (Ref link : ? ) letting official eks cli plugin documentation from the aws side ,
+
+During this chapter . We were assigning multiple policies directly to the worker nodes of our k8s cluster and the bac new is that this is not a good pratice but thatz fine because we will address that in the next chapter . 
+
