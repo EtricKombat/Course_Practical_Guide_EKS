@@ -281,13 +281,23 @@ _____________________
 
 
 
-
+- we checked the version of our CNI plugin , if it is less than v.16 we need to upgrade it 
+- we set 2 environment variable to CNI plugin
+- and we installed 2 custom resources definitions that will specifiy what subnets and what secuity groups that we are going to start deploying our pods into . 
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119608074-fee45e00-be12-11eb-8b9c-5d1b3b098c8d.png)
 
 
+so inorder to get all this configuration functinal we need to drop the existing worker nodes and the autoscaling group will create new ones with the new configuration nodes in it . And we will recreate all the  pods into the new subnet we specified . 
+
+
+Go to the AWS console and drop the existing woker nodes (terminate)
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119608271-4e2a8e80-be13-11eb-85db-c721e1e54b5b.png)
+
+
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119608342-70bca780-be13-11eb-9e99-890937ad3409.png)
