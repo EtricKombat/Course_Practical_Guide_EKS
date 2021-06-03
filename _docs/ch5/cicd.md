@@ -38,10 +38,12 @@ As mentioned we will be using some of the code suite of aws which are :
 
 -code commit for source coe management offer microservices in isolated repository
 -code build for building our docker images pushing them to ecr and also running deployment instruction which in our case are based on helm . 
-- code pipeline to connecting everything to gather applying everything to workflow . 
+- code pipeline to connecting everything to gather applying automation to workflow . 
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119655095-ccecef00-be46-11eb-9fbd-54c0dc2f59cf.png)
 
 As we have been doing in all the chapters , let direct all we are doing to the well architecture framework in this case we are going to be 
+specific in 2 of the question of the operation excellence piller . 
+
 
