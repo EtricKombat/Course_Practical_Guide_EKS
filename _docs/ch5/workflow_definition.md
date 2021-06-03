@@ -14,29 +14,44 @@
 ![image](https://user-images.githubusercontent.com/33585301/119655381-26551e00-be47-11eb-93dc-786ef5d3ab0b.png)
 
 
+We are going to be defining CICD workflow that we are going to be creating during this chapter .
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119655454-3a991b00-be47-11eb-82b8-63d8aa68e8ec.png)
 
 
+Initial source , code . Each microservices will have git repo in our code commit .
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119655476-41279280-be47-11eb-90a5-be768e689c2f.png)
+
+Each of them will start with a master branch , for this workflow no push into master branch are allowed . 
+
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119655663-78963f00-be47-11eb-8e3c-07cb5a869b37.png)
 
 
+So Developer will have to create copy of master where he will start coding the task they were asked to do . 
+
 ![image](https://user-images.githubusercontent.com/33585301/119655679-7d5af300-be47-11eb-8695-07998a6f78a2.png)
 
+
+
+This is a process that could involve multiple commit so this same branch as he works to it . 
 
 ![image](https://user-images.githubusercontent.com/33585301/119655725-877cf180-be47-11eb-9d92-08667ed89833.png)
 
 
+When the developer is done we will request merging the code into the branch via the pull request .
+
 ![image](https://user-images.githubusercontent.com/33585301/119655757-8e0b6900-be47-11eb-8186-bd0183b1194b.png)
 
-
+ Once merged we will trigger the automated build job that will create docker image and pull it to ecr 
 
 ![image](https://user-images.githubusercontent.com/33585301/119655894-b3987280-be47-11eb-93da-1cb76438f10f.png)
 
-
+Its important to notice that we have one ECR per micro service . Then after push the image we will automatically trigger another job to deploy directly into the development environment , after the feature is tested in this environment and if everything looks good then we will need a manual approval to push the same package to the production environment ready for being consumed by the customers . 
 
 ![image](https://user-images.githubusercontent.com/33585301/119655934-bf843480-be47-11eb-8c4e-b42110174806.png)
 
@@ -45,6 +60,8 @@
 
 ![image](https://user-images.githubusercontent.com/33585301/119656001-d034aa80-be47-11eb-834f-bd2fa8879d8d.png)
 
+Ths process is iterative allowing the development team to continue creating feature branhes of master and following the same process 
+Lets review all of the process 
 
 ________________________________
 
