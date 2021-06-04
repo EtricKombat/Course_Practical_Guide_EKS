@@ -307,3 +307,47 @@ Here is the build project .
   ![image](https://user-images.githubusercontent.com/33585301/120750466-0945dc80-c524-11eb-8b70-1eb78defbc52.png)
 
   
+
+  
+  It already start building the docker image , first thing it needs to download the base images , for the very first time it needs to take longer than expected . 
+  
+  ONce build it need to login to ecr to authenticate . and then push the code to the ecr repo we just created with CF . And there it is it has completed . 
+  
+  successfully . As you can see the status of this specific build was succeded . 
+  
+  
+  
+  ![image](https://user-images.githubusercontent.com/33585301/120751283-68582100-c525-11eb-89c3-f4fd084daf0b.png)
+  
+  
+  In the build history also we can see it was succeded . 
+  
+  ![image](https://user-images.githubusercontent.com/33585301/120751405-92114800-c525-11eb-8932-cada15bab7b6.png)
+  
+  
+  Remember how we build the version , with the major and minor number and then the very first 8 charaters of the git commit id .
+  
+  ![image](https://user-images.githubusercontent.com/33585301/120751455-a5241800-c525-11eb-9468-bc0a44d3bb67.png)
+
+so let see if that works . 
+  
+  services->ecr-> resources-api repo 
+  
+  
+  ![image](https://user-images.githubusercontent.com/33585301/120751640-fcc28380-c525-11eb-881a-5c8371809cdf.png)
+  
+  
+  we have created docker image and pushed it into our repo in our AWS account 
+  
+  
+  1. upload the code to codecommit repo 
+  2. create the codebuild project create ecr repo so that we could build the app push the docker images off of it . 
+  3. NOw we have to make everything automated , every single time you push on a change it will trigger automaticlly. 
+  
+  This is what we are going to cover in the next lab . 
+  
+  ![image](https://user-images.githubusercontent.com/33585301/120751657-06e48200-c526-11eb-8645-366bfdb5d171.png)
+
+
+
+  
