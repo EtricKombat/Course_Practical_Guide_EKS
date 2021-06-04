@@ -267,7 +267,43 @@ what can we do with our code , the second step is to introduce now to code build
   
   This is all update and pushed again to code commit let go back to aws management console and look for the job in codebuild 
   
+Here is the build project . 
   
+  
+  ![image](https://user-images.githubusercontent.com/33585301/120749860-f1ba2400-c522-11eb-9bd8-939327e6f927.png)
+
+  Lets see some build details 
+  
+  -what the source provider in our case is codecommit 
+  -which repo we are talking about , it is the codecommit repo created for resource-api 
+  - what is the source version is the branch we want CICD trigger and more details about the build job 
+
+  ![image](https://user-images.githubusercontent.com/33585301/120749839-e4049e80-c522-11eb-8243-187502563c87.png)
+
+  Start build
+  
+  We can change parameters here , in this case we are good
+  
+![image](https://user-images.githubusercontent.com/33585301/120750102-68572180-c523-11eb-82be-b702a02f3fe1.png)
+
+  ![image](https://user-images.githubusercontent.com/33585301/120750176-8de42b00-c523-11eb-8a74-b9a81d30f260.png)
 
   
+  
+  ![image](https://user-images.githubusercontent.com/33585301/120750241-a8b69f80-c523-11eb-84a4-8beeea85bb04.png)
+  
+  so as you can see it will prompt all the logs and we can tail the logs to see the progress in life . 
+  
+  ![image](https://user-images.githubusercontent.com/33585301/120750370-e0bde280-c523-11eb-9412-3b7a95654a94.png)
+
+
+  ![image](https://user-images.githubusercontent.com/33585301/120750555-27abd800-c524-11eb-872d-59fdf908f5e9.png)
+  
+  
+  ![image](https://user-images.githubusercontent.com/33585301/120750511-1a8ee900-c524-11eb-99c4-bdd10ee46baa.png)
+
+
+  
+  ![image](https://user-images.githubusercontent.com/33585301/120750466-0945dc80-c524-11eb-8b70-1eb78defbc52.png)
+
   
