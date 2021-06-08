@@ -70,12 +70,16 @@ If we continue scrolling down we find the IAM asset to attach to the cloud watch
 ![image](https://user-images.githubusercontent.com/33585301/120753558-f97cc700-c528-11eb-94a2-5513ba13eeb1.png)
 
 
-And finally we have the definition of the pipelie
+And finally we have the definition of the pipelie . Lets look at the stages of this .
 
 ![image](https://user-images.githubusercontent.com/33585301/120753587-04375c00-c529-11eb-8569-ec1e0aa3c980.png)
 
+stage 1) source : which is getting all the code from the code commit repository and from the master branch or the branch we specified in the stack 
+
 
 ![image](https://user-images.githubusercontent.com/33585301/120753608-0dc0c400-c529-11eb-866f-aed621bff248.png)
+
+stage 2) build : this stage is pointing to the code build project we just saw running and building our code and pushing the docker image directly to ECR  
 
 
 Thos are the new changes for this template. 
@@ -88,14 +92,32 @@ https://github.com/EtricKombat/Course_Practical_Guide_EKS/blob/master/Infrastruc
 
 ___________________________________________
 
+Lets got to CF and lets update this . 
 
 ![image](https://user-images.githubusercontent.com/33585301/119766187-2fd79800-bed2-11eb-8af7-58470358507c.png)
 
 
+Change it with the 3rd file . same parameter . 
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119766216-3c5bf080-bed2-11eb-98d6-f8ca4b618305.png)
+
+
+It has finished the update of the stack . 
 
 ![image](https://user-images.githubusercontent.com/33585301/119766244-50075700-bed2-11eb-80d8-0ad6b77857b6.png)
 
+Lets now go to most resource this one should have created which is code pipeline . This is the pipeline we have created as you can see 'most recent exectution' is failed . 
+because of the lack of permission on IAM the CF was still creating . So dont worry about that specifically .  Now with this pipeline in place we sure already have the ability to push new changes and immediately have this pipeline to execute automatically . 
+
+So lets go to the terminal to commit new change to repository , and push it to the master branch to test it to the automation 
+
+
+______________
+
+## in the terminal 
+
+A simple change just for triggering and testing automation with code pipeline 
 
 ![image](https://user-images.githubusercontent.com/33585301/119766261-5a295580-bed2-11eb-964a-347f0b813ac4.png)
 
