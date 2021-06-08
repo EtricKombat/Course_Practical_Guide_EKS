@@ -128,16 +128,49 @@ A simple change just for triggering and testing automation with code pipeline
 ![image](https://user-images.githubusercontent.com/33585301/119766549-d7ed6100-bed2-11eb-90f5-f3579c741032.png)
 
 
+Once we change MINOR=0 to MINOR=1 just for testing 
+
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119766594-efc4e500-bed2-11eb-9c03-9544143961a7.png)
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119766630-fce1d400-bed2-11eb-9908-e6f5105db06f.png)
 
 
+
+It pushed our file . Now let go back to our AWS management console . And then see the code pipeline started immedialty 
+
+
 ![image](https://user-images.githubusercontent.com/33585301/119766678-1551ee80-bed3-11eb-96b1-3df5d057a3a4.png)
+
+It already finished the firet state , which was getting the src code from code commit . Now it is building it . After build and then we can go to ECR and verify that the new image was creating in there . 
+
+
+ecr - > bookstore.resources.api 
+
+
+as you can see we have a second image which starts with '1.1.*'  , we updated this in the versions file . We change the MINOR number to 1 and now we  get this upgraded version of the code . everthing went automatically just with the simple push of that commit . 
+
+
+Lets review what we have achieved in this process
+
 
 ![image](https://user-images.githubusercontent.com/33585301/119766713-2569ce00-bed3-11eb-8948-f5a64383d355.png)
 
+
+____________________________________________________
+
+This diagram show what we have already achieved . 
+
+We did this in 3 stages 
+
+
+1) Creating with CF codecommit repo  & push the code into it using git . 
+2) Then with CF again we created the code build project that we could manually trigger and then push the docker image just  build in to the ECR 
+3) Another CF template updated everything creating the automation required for the code pipeline from the cloudwatch event , the s3 bucket for the artifacts & connecting everything so now every simgle time we push changes to the master branch we are going to have all this flow automatically . 
+
+From here we will be continuing to upgrading &  expand our workflow 
 
 
 ![image](https://user-images.githubusercontent.com/33585301/119766844-5e09a780-bed3-11eb-96f4-62d5e9d6ac3e.png)
