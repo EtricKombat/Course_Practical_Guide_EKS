@@ -113,14 +113,15 @@ because of the lack of permission on IAM the CF was still creating . So dont wor
 So lets go to the terminal to commit new change to repository , and push it to the master branch to test it to the automation 
 
 
+![image](https://user-images.githubusercontent.com/33585301/119766261-5a295580-bed2-11eb-964a-347f0b813ac4.png)
+
+
+
 ______________
 
 ## in the terminal 
 
 A simple change just for triggering and testing automation with code pipeline 
-
-![image](https://user-images.githubusercontent.com/33585301/119766261-5a295580-bed2-11eb-964a-347f0b813ac4.png)
-
 
 
 
